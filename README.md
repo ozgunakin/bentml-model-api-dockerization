@@ -213,3 +213,7 @@ sudo docker load -i your_image.tar
 
 Congratulation! You dockerized your ml model using bentoML. You can use this image on any host that has docker. In addition, you can reach the bentoML API UI over IP address and dedicated port.
 
+
+
+
+
