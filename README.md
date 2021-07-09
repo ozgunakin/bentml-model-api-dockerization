@@ -143,7 +143,7 @@ print(response.text)
 
 * [x] If you get the same result it means that your API is working correctly. You can stop your notebooks and jump to the next step to dockerize yourAPI.
 
-## Step 5 - Dockerizing
+## Step 5 - Dockerization
 
 Note: To complete this step successfully, you need to have docker installed on your server !! To learn how to install docker on ubuntu, you can visit this website \([https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)\). If you install docker after you install bentoML, you may need to uninstall and install bentoML again.
 
