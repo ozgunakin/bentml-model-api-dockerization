@@ -1,0 +1,64 @@
+[2021-07-09 11:25:33,142] {bento_repository_api.py:236} INFO - BentoService bundle 'LogisticModel:20210709112532_463C04' saved to: /home/ubuntu/bentoml/repository/LogisticModel/20210709112532_463C04
+[2021-07-09 11:29:29,645] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709112532_463C04
+[2021-07-09 11:29:29,654] {__init__.py:88} INFO - Starting BentoML API proxy in development mode..
+[2021-07-09 11:29:29,655] {__init__.py:71} INFO - Starting BentoML API server in development mode..
+[2021-07-09 11:29:29,783] {marshal.py:291} INFO - Micro batch enabled for API `predict` max-latency: 20000 max-batch-size 4000
+[2021-07-09 11:29:29,783] {marshal.py:204} INFO - Your system nofile limit is 4096, which means each instance of microbatch service is able to hold this number of connections at same time. You can increase the number of file descriptors for the server process, or launch more microbatch instances to accept more concurrent connection.
+[2021-07-09 11:34:31,551] {dispatcher.py:211} INFO - outbound function called: 1
+[2021-07-09 11:34:31,555] {inference_api.py:178} ERROR - Error caught in API function:
+Traceback (most recent call last):
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/bentoml/service/inference_api.py", line 176, in wrapped_func
+    return self._user_func(*args, **kwargs)
+  File "/home/ubuntu/bentoml/repository/LogisticModel/20210709112532_463C04/LogisticModel/logistic_model_service.py", line 20, in predict
+    return self.artifacts.model.predict(df)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sklearn/linear_model/_base.py", line 309, in predict
+    scores = self.decision_function(X)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sklearn/linear_model/_base.py", line 284, in decision_function
+    X = check_array(X, accept_sparse='csr')
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sklearn/utils/validation.py", line 63, in inner_f
+    return f(*args, **kwargs)
+  File "/home/ubuntu/.local/lib/python3.8/site-packages/sklearn/utils/validation.py", line 687, in check_array
+    raise ValueError(
+ValueError: Expected 2D array, got scalar array instead:
+array=None.
+Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
+[2021-07-09 11:35:14,623] {dispatcher.py:211} INFO - outbound function called: 1
+[2021-07-09 11:36:17,965] {dispatcher.py:211} INFO - outbound function called: 1
+[2021-07-09 11:39:04,846] {dispatcher.py:211} INFO - outbound function called: 1
+[2021-07-09 11:39:04,854] {dispatcher.py:80} INFO - optimizer params updated: o_a: 0.003826, o_b: 0.003826, wait: 0.000094
+[2021-07-09 11:47:11,644] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709112532_463C04
+[2021-07-09 11:47:11,732] {yatai_service_impl.py:590} ERROR - RPC ERROR ContainerizeBento: Docker is required for this deployment. Please visit www.docker.com for instructions
+[2021-07-09 11:47:32,678] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709112532_463C04
+[2021-07-09 11:47:32,716] {yatai_service_impl.py:590} ERROR - RPC ERROR ContainerizeBento: Docker is required for this deployment. Please visit www.docker.com for instructions
+[2021-07-09 11:48:43,422] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709112532_463C04
+[2021-07-09 11:48:43,458] {yatai_service_impl.py:590} ERROR - RPC ERROR ContainerizeBento: Docker is required for this deployment. Please visit www.docker.com for instructions
+[2021-07-09 11:49:32,751] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709112532_463C04
+[2021-07-09 11:49:32,788] {yatai_service_impl.py:590} ERROR - RPC ERROR ContainerizeBento: Docker is required for this deployment. Please visit www.docker.com for instructions
+[2021-07-09 11:49:50,348] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709112532_463C04
+[2021-07-09 11:49:50,385] {yatai_service_impl.py:590} ERROR - RPC ERROR ContainerizeBento: Docker is required for this deployment. Please visit www.docker.com for instructions
+[2021-07-09 11:51:18,863] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709112532_463C04
+[2021-07-09 11:51:18,899] {yatai_service_impl.py:590} ERROR - RPC ERROR ContainerizeBento: Docker is required for this deployment. Please visit www.docker.com for instructions
+[2021-07-09 11:51:54,669] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709112532_463C04
+[2021-07-09 11:51:54,706] {yatai_service_impl.py:590} ERROR - RPC ERROR ContainerizeBento: Docker is required for this deployment. Please visit www.docker.com for instructions
+[2021-07-09 11:54:01,400] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709112532_463C04
+[2021-07-09 11:54:01,441] {yatai_service_impl.py:590} ERROR - RPC ERROR ContainerizeBento: Docker is required for this deployment. Please visit www.docker.com for instructions
+[2021-07-09 11:55:05,072] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709112532_463C04
+[2021-07-09 11:55:05,109] {yatai_service_impl.py:590} ERROR - RPC ERROR ContainerizeBento: Docker is required for this deployment. Please visit www.docker.com for instructions
+[2021-07-09 11:56:23,536] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709112532_463C04
+[2021-07-09 11:56:23,572] {yatai_service_impl.py:590} ERROR - RPC ERROR ContainerizeBento: Docker is required for this deployment. Please visit www.docker.com for instructions
+[2021-07-09 12:00:00,574] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709112532_463C04
+[2021-07-09 12:00:00,613] {yatai_service_impl.py:590} ERROR - RPC ERROR ContainerizeBento: Docker is required for this deployment. Please visit www.docker.com for instructions
+[2021-07-09 12:00:20,118] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709112532_463C04
+[2021-07-09 12:00:20,156] {yatai_service_impl.py:590} ERROR - RPC ERROR ContainerizeBento: Docker is required for this deployment. Please visit www.docker.com for instructions
+[2021-07-09 12:11:16,133] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709112532_463C04
+[2021-07-09 12:11:16,169] {yatai_service_impl.py:590} ERROR - RPC ERROR ContainerizeBento: Docker is required for this deployment. Please visit www.docker.com for instructions
+[2021-07-09 12:11:18,483] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709112532_463C04
+[2021-07-09 12:11:18,521] {yatai_service_impl.py:590} ERROR - RPC ERROR ContainerizeBento: Docker is required for this deployment. Please visit www.docker.com for instructions
+[2021-07-09 12:17:05,979] {bento_repository_api.py:236} INFO - BentoService bundle 'LogisticModel:20210709121705_8D9D86' saved to: /home/ubuntu/bentoml/repository/LogisticModel/20210709121705_8D9D86
+[2021-07-09 12:22:29,324] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709121705_8D9D86
+[2021-07-09 12:22:29,362] {yatai_service_impl.py:590} ERROR - RPC ERROR ContainerizeBento: Docker is required for this deployment. Please visit www.docker.com for instructions
+[2021-07-09 12:27:23,749] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709121705_8D9D86
+[2021-07-09 12:27:23,787] {yatai_service_impl.py:590} ERROR - RPC ERROR ContainerizeBento: Docker is required for this deployment. Please visit www.docker.com for instructions
+[2021-07-09 12:28:40,578] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709121705_8D9D86
+[2021-07-09 12:28:40,615] {yatai_service_impl.py:590} ERROR - RPC ERROR ContainerizeBento: Docker is required for this deployment. Please visit www.docker.com for instructions
+[2021-07-09 12:31:20,927] {yatai_service_impl.py:478} INFO - Getting latest version LogisticModel:20210709121705_8D9D86

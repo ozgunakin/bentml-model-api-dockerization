@@ -1,0 +1,2 @@
+include LogisticModel/bentoml.yml
+graft LogisticModel/artifacts
