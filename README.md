@@ -117,8 +117,6 @@ saved_path = logistic_model_service .save()
 [2021-07-09 11:25:33,142] INFO - BentoService bundle 'LogisticModel:20210709112532_463C04' saved to: /home/ubuntu/bentoml/repository/LogisticModel/20210709112532_463C04
 ```
 
-
-
 ## Step 4 - Serve Your Model 
 
 * [x] Run this command on your jupyter notebook.
@@ -147,7 +145,71 @@ print(response.text)
 
 ## Step 5 - Dockerizing
 
-Note: To complete this step successfully, you need to have docker installed on your server !! To learn how to install docker on ubuntu, you can visit this website \([https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)\)
+Note: To complete this step successfully, you need to have docker installed on your server !! To learn how to install docker on ubuntu, you can visit this website \([https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)\). If you install docker after you install bentoML, you may need to uninstall and install bentoML again.
+
+* [x] On your bash, run the following command
+
+```text
+docker run -p 5000:5000 logistic-model:latest --workers=1 --enable-microbatch
+```
+
+* [x] The output should be like,
+
+```text
+ubuntu@ip-172-31-5-143:~$ docker run -p 5000:5000 logistic-model:latest --workers=1 --enable-microbatch
+[2021-07-09 12:53:23,604] WARNING - Option --enable-microbatch/--disable-microbatch has been deprecated in the current release. The micro-batching option has become the default. Consider using --mb-max-batching=1 to simulate the effect of --disable-microbatch
+[2021-07-09 12:53:23,608] INFO - Starting BentoML proxy in production mode..
+[2021-07-09 12:53:23,609] INFO - Starting BentoML API server in production mode..
+[2021-07-09 12:53:23,622] INFO - Running micro batch service on :5000
+[2021-07-09 12:53:23 +0000] [9] [INFO] Starting gunicorn 20.1.0
+[2021-07-09 12:53:23 +0000] [9] [INFO] Listening at: http://0.0.0.0:40507 (9)
+[2021-07-09 12:53:23 +0000] [9] [INFO] Using worker: sync
+[2021-07-09 12:53:23 +0000] [10] [INFO] Booting worker with pid: 10
+[2021-07-09 12:53:23 +0000] [1] [INFO] Starting gunicorn 20.1.0
+[2021-07-09 12:53:23 +0000] [1] [INFO] Listening at: http://0.0.0.0:5000 (1)
+[2021-07-09 12:53:23 +0000] [1] [INFO] Using worker: aiohttp.worker.GunicornWebWorker
+[2021-07-09 12:53:23 +0000] [11] [INFO] Booting worker with pid: 11
+[2021-07-09 12:53:23,803] INFO - Micro batch enabled for API `predict` max-latency: 20000 max-batch-size 4000
+[2021-07-09 12:53:23,803] INFO - Your system nofile limit is 1048576, which means each instance of microbatch service is able to hold this number of connections at same time. You can increase the number of file descriptors for the server process, or launch more microbatch instances to accept more concurrent connection.
+```
+
+* [x] Test your dockerized api using jupyter notebook,
+
+```text
+import requests
+
+test_data=[[3, 102, 44, 20, 94, 30.8, 0.4, 26 ]]
+response = requests.post("http://localhost:5000/predict", json=test_data)
+print(response.text)
+```
+
+* [x] The output should be like,
+
+```text
+[0.0]
+```
+
+* [x] You can now reach the UI using your host IP adaress and dedicated port. You can run some tests using this UI.
+
+![](.gitbook/assets/api_dashboard.png)
+
+## Hint:
+
+If you want to use your docker image in another host, you can save your image as a tar file. 
+
+```text
+sudo docker save -o /home/sammy/your_image.tar your_image_name
+```
+
+After uploading this tar file to another host you can simply load this image with the following command
+
+```text
+sudo docker load -i your_image.tar
+```
 
 
+
+## Conclusion
+
+Congratulation! You dockerized your ml model using bentoML. You can use this image on any host that has docker. In addition, you can reach the bentoML API UI over IP address and dedicated port.
 
