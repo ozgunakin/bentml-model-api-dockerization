@@ -1,4 +1,4 @@
 # Table of contents
 
-* [BentoML Model Api Dockerization](README.md)
+* [Initial page](README.md)
 
